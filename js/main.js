@@ -2,6 +2,7 @@ var contacts = [];
 var position = 0;
 var img = document.getElementById('imageLoader');
 
+
 var btnRight = document.getElementById('btnRight');
 var btnLeft = document.getElementById('btnLeft');
 var btnPlay = document.getElementById('btnPlay');
@@ -26,7 +27,7 @@ function Contact(name, image, id) {
   this.name = name;
 }
 
-function loadImages() {
+(function loadImages() {
   var image = new Image();
   image.src = 'img/renaud.jpg';
   var contact = new Contact("Renaud", image, 1);
@@ -67,10 +68,11 @@ function loadImages() {
   contact = new Contact("Sems", image, 8);
   contacts.push(contact);
 
-};
+  displayImage();
 
-loadImages();
-displayImage();
+})();
+
+
 
 function displayImage() {
   img.src = contacts[position].image.src;
@@ -78,7 +80,6 @@ function displayImage() {
 }
 
 function playClick() {
-  console.log("dans play");
   btnPlay.style.display = "none";
   btnPause.style.display = "inline-block";
   slider = setInterval(function() {
@@ -112,11 +113,15 @@ function backClick() {
 }
 
 function firstClick() {
-  postion = 0;
-  displayImage();
+  if (position !== 0) {
+    position = 0;
+    displayImage();
+  }
 }
 
 function lastClick() {
-  position = contacts.length - 1;
-  displayImage();
+  if (position !== contacts.length - 1) {
+    position = contacts.length - 1;
+    displayImage();
+  }
 }

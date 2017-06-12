@@ -2,23 +2,40 @@
 //sourcemap: true
 //compress: true
 //main: ./main.less
+body {
+ //  border:1px solid black;
+  background-color: gray!important;
+  color: white;
+}
+.navbar-brand{
+  padding:0;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-right: 20px;
+  // margin:0;
+}
+.jumbotron h1, .lead {
+  color: gray !important;
+}
 
- body {
-  //  border:1px solid black;
-   background-color: gray;
-   color: white;
- }
- .carrousel{
-   text-align: center;
-   width: 400px;
-   margin:auto;
- }
- .image{
-   height: 280px;
-   width: 100%;
-   margin-left: auto;
-   margin-right: auto;
- }
-header {
+.carrousel{
   text-align: center;
+  width: 400px;
+  margin:auto;
+}
+.image{
+  height: 280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#imageLoader{
+ -moz-box-shadow: 0px 10px 10px -5px #656565;
+-webkit-box-shadow: 0px 10px 10px -5px #656565;
+-o-box-shadow: 0px 10px 10px -5px #656565;
+box-shadow: 0px 10px 10px -5px #656565;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=10);
+}
+header {
+ text-align: center;
 }
